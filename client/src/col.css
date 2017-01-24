@@ -1,0 +1,38 @@
+.parent > div {
+	display: none;
+	position: fixed;
+	left: 0; right: 0;
+	top: 0; bottom: 0;
+}
+
+.parent > div.show {
+	display: block;
+}
+
+.col1{
+	background-color: black;
+}
+
+.col2{
+	background-color: honeydew;
+}
+
+.col3{
+	background-color: lightblue;
+}
+
+.col4{
+	background-color: lightgrey;
+}
+
+.col5{
+	background-color: lightsteelblue;
+}
+
+.col6{
+	background-color: gold;
+}
+
+.col7{
+	background-color: aqua;
+}
