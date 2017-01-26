@@ -12,7 +12,6 @@ class Root extends Component {
 			<BrowserRouter >
 				<div>
 					<Match exactly pattern="/" component={App} />
-					<Match exactly pattern="/visualizerdemo" component={Visualizer} />
 					<Match exactly pattern="/editor" component={Editor} />
 					<Match pattern="/visualizer/:id" component={Visualizer} />
 					

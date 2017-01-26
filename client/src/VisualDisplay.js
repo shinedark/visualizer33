@@ -13,7 +13,7 @@ class VisualDisplay extends React.Component {
 
   	let self = this;
 
-  	axios.get('http://localhost:3001/api/visualizers')
+  	axios.get('/api/visualizers')
   	  .then(function (response) {
   	    console.log(response);
   	    self.setState({visualizers:response.data});

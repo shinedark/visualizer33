@@ -17,10 +17,9 @@ module.exports = function(app ) {
       res.send(200);
     });
 
-    app.get('/', function(req, res) {
-        res.render('client/index.js'); // load the index.ejs file
-    });
-
+    // app.get('/', function(req, res) {
+    //     res.render('client/index.js'); // load the index.ejs file
+    // });
 
     app.get('/api/icons', (req,res) => {
       res.send(icons);
@@ -36,11 +35,6 @@ module.exports = function(app ) {
     console.log(req.body);
       Visualizer.create(req.body,function(err,visualizer){
         if(!err){
-            // if(process.env.NODE_ENV=='production'){
-            //     res.redirect('/visualizer/'+visualizer._id);
-            // } else {
-            //     res.redirect('http://localhost:3000/visualizer/'+visualizer._id);
-            // }
             res.send(visualizer);
         } else {
             console.error(err);
@@ -65,7 +59,7 @@ module.exports = function(app ) {
       res.set({
          'Access-Control-Allow-Origin': '*',
          'Content-Type': 'text/javascript; charset=UTF-8',
-         'Cache-Control': 'public, max-age=28800'
+         'Cache-Control': 'public, max-age=0'
        });
       Visualizer.find({$and: [{title: {$ne:null }}, {title: {$ne:""}}] },function(err,data){
           if(!err){
@@ -74,6 +68,8 @@ module.exports = function(app ) {
       });
     });
   
-
+    app.get('*', (req,res)=>{
+      res.sendFile('client/build/index.html', { root: __dirname });
+    });
 
 };
