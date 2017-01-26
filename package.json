@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "client": "babel-node start-client.js"
   },
   "devDependencies": {
